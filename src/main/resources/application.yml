@@ -1,0 +1,42 @@
+server:
+  port: 3434
+  servlet:
+    session:
+      cookie:
+        domain: localhost
+spring:
+  # DataSource Config
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/sanshui?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  # redis 配置
+  redis:
+    port: 6379
+    host: localhost
+    database: 1
+mybatis-plus:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  #  如果说数据库是下划线那么就自动转换成驼峰
+  #  如果是驼峰就转换成下划线
+  #  总而言之就是相互转换
+  configuration:
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      # 全局逻辑删除的实体字段名 (since 3.3.0, 配置后可以忽略 @TableLogic 中的配置)
+      logic-delete-field: flag
+      # 逻辑已删除值(默认为 1)
+      logic-delete-value: 1
+      # 逻辑未删除值(默认为 0)
+      logic-not-delete-value: 0
+upload:
+  path=/path/to/your/upload/directory:
+alipay:
+  appId: 2021004154619267
+  appPrivateKey: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCTPHrBV20uuYF8IevW/8IvFI1fPKyzI13TZgNL63psoFoIp2Yg4Nq+wx2T1RBkrPEEAJjWyk/KthdrNDfFu6RRvIJhz32Y7OcKpUDHoDqq68PBnf9haHXflUmN/Cmh8i9vNGvCyYhjLpkrypmwwfa1jgNCc4p1gFCGg7Oho0bdRG4LCNaBIqxDlzjpp9C6axULxYwGiAAL2N9mJ3+1g25dvaWPzQ7jKOqpNSzUFkXaEKhHAz+dMt/eQL9jtFqp6Ys0Bb8xEAn27ipg/tGytN19Yf8vbj8JBnM2wjsB2NKLfvNQO7m8gSpwF/3IPqosupCWQX/OBP/+aQb7IxLOJy1zAgMBAAECggEAaNDSVtdlS7EWBAel/D3AwIFyDw2DqFeSEM97o010ruYMkkKRivBn6Qu//6DbdcBEJ+RA6g/Gc/njfBcFaUemt+VqMDVlJTvpUoPINRTVDx6eEjTnPDIAT/XYEjMkdDyUFieMW3PbGzhuJGWrudCrUB5UJbdZJ0L8kHYrp/MznIpncj1PW4Ho0T1ZnDrngO4MYDVCFYcO8Te7rUKT4wCqRT7YcswCklB1RdAG79QOrMNVrJiQZyEWgec3xlZnihP1u/N7VbRTGURXWQN85afNFd/lNPb+GeY9dXIbZ8axqFqHIyqA03VsuSZStI+5sBrbWoWlaAEJ+UpOl9wZsSFd4QKBgQDYpH3QARvI2h+1gPpDx4ClJKzPe3y3Wvl5iceWIVJger0aXzJNHsS2Ol/IEQH0dPxUF1J48uClqz1u+/UUXj2JqdxecWtrPPlQs2+//LjpsAyu/w9XlrtZLWEeZgq+GvMX/Uqbj7PrhaSSUkY9w4oiCRflq5CZoLQU6NbKICWTEQKBgQCt/BKvURmR8FxGt/JxQahtAQ7brvvUaZ0Xr7VYdW74EhBxBLdeupz/mKeM5Tbtf3jkzedjljEeySyOibjjZ5kygy5NwyPjefESYpLAYtAGL4OHz/NXIv379rFVccoyti0p1FRO1xYrCz82ADLe3IklAByJqKZgWbMf4HMRr9awQwKBgQDQqM4M06SBNaWo2csyEStU5BgV1uhuaY8zgoLblMiU6GLOzbXTFbl9kofCWK87VpnaHIRwve2lY2NOTBrnPUWkHBiGVlOR/C5djhYqIi2v1sLAoiWSxTk5UT3jW4EpTSeqiWmcnzI5vISf8eJ5hqa61WtQ6IfjkCcipIiMMZ4/IQKBgBGzsAL+cWeT2Q+o75XuZECS9vwLFbxK8pzSV9UkPaIn1FxramzM9+RZl9KSD8CiU56UBJLxWRYUyd/Gy3T3uXKWPkPTMveWFJ0WQnAonZnDg9JxqgSXntfgBbL33ObD+lxjKiDLaYn/nvLTmllqftmw5TZsXmE3Py5jG9IU3fcZAoGAYccUMDRojSy+gIljVSLRtaDoPALzUn8wK33DxNWcyUV0xwqMa6Zw4VFNlHkQD+ocl+BkmOCukD8YUYcjQkELYJAmJuW/WIqTmxg4w5bmvFZUvAY1042O7fF08kSLWtTOTWXhRjrayBL7EyUPcIRd4isot9y166kOTVzqTAm7yI4=
+  alipayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnZvVfcBMDA33vUtRccmI7RQqjIMtv3uQSuUm0lufm0PNbQ40JOjQKaFcRVAXIxDiBodroo5dGYX2DNCkLzYi3r3kfo7yTG0yz989xemeR65nhAOXSForlnoELJNwH8CmtxdhgkLXSopQ6dvrxw7gnoF5Q4VjHW7xndkgVxTLI6j6vJuCkj+jv6GUeVSbzovHgKwNNzbszFoBbECfX02H8kMhgRKC6avGl4DVVgMXNdQrp5fBQvv3cQny6nL1qlR9BKuwFSxA0fJz+UZVDVIHSGV/7mKt9KwwU8aCep+bQr//+hBlKPeQoig1ERpMIm3xCyVymU6mr321A+T+syeTeQIDAQAB

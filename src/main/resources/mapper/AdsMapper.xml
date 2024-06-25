@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.snashuitraverl.demos.mapper.AdsMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.snashuitraverl.demos.domain.Ads">
+            <id property="adsID" column="adsID" jdbcType="INTEGER"/>
+            <result property="adsAvatural" column="adsAvatural" jdbcType="VARCHAR"/>
+            <result property="adsLink" column="adsLink" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        adsID,adsAvatural,adsLink
+    </sql>
+</mapper>
